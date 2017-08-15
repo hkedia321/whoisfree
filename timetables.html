@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Who is free? | user</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	<meta name="author" content="Harshit Kedia, utkarsh Bajpai">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<style>
+		label{
+			display: inline;
+		}
+		form.search{
+			margin-top: 5vh;
+		}
+		#register iframe{
+			width: 100%;
+			min-height:1000px;
+			border: none;
+		}
+		@media(max-width:400px){
+			form.search button{
+				margin-top: 10px;
+			}
+		}
+		@media(max-width: 769px){
+			#register iframe{
+				width: 100%;
+				min-height:1400px;
+			}
+		}
+		/*cf3*/
+		.searchtable td{
+			background-color: #cf3;
+		}
+		.searchtable td:hover{
+			cursor: pointer;
+			background-color: #d2cece;
+		}
+		.red{
+			color: red;
+		}
+		.notice{
+			background-color: #f2f2f2;
+			margin-bottom: 20px;
+			padding: 5px;
+		}
+	</style>
+	<script language="javascript" type="text/javascript">
+		function resizeIframe(obj) {
+		//obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+	}
+</script>
+</head>
+<body>
+	<div class="container">
+		<div class="contentmain">
+			<br>
+			<div class="row">
+				<ul class="nav nav-tabs nav-justified">
+					<li><a href="search.html">Search</a></li>
+					<li class="active"><a href="timetables.html">timetables</a></li>
+					<li><a href="notices.html">Notices</a></li>
+					<li><a href="register.html">Register</a></li>
+					<li><a href="changepassword.html">Change Password</a></li>
+						
+				</ul>
+			</div>
+			<div class="tab-content">
+				
+				<div id="timetables" class="tab-pane fade in active">
+					<h2 class="text-center">TimeTables</h2>
+					<ol>
+						<li><div class='timetablediv'><h4 class='timetablename'>Utkarsh Bajpai(15BCE2082)</h4><a href='images/15BCE2082.png' target='_blank'><img src='images/15BCE2082.png' class='timetableimg'></a></div> </li>
+						<li><div class='timetablediv'><h4 class='timetablename'>Harshit Kedia(15BCE0329)</h4><a href='images/15BCE2082.png' target='_blank'><img src='images/15BCE2082.png' class='timetableimg'></a></div> </li>
+					</ol>				
+				</div>
+									
+			</div>
+		</div>
+		<footer>
+			<div class="row">
+				<div class="col-sm-4 contentdiv">
+					<div class="content">
+						<a href="logout.php" onclick="oncli()"><button class="btn btn-danger">Logout</button></a>
+						<br>
+						<a href="#myModal" data-toggle="modal">Report a bug</a>
+					</div>
+				</div>
+				<div class="col-sm-4 contentdiv">
+					<div class="content">
+						<a href="http://www.vit.ac.in" target="_blank"><p class="developed">Developed by Harshit Kedia, Utkarsh Bajpai</p></a>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<!-- Modal -->
+	<div id="myModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h3 class="modal-title text-center">Report a bug</h3>
+				</div>
+				<div class="modal-body">
+					<form action="reportbug.php" method="post">
+						<div class="form-group">
+							<label for="email" class="col-sm-2 control-label">Email<span class="red">*</span></label>
+							<div class="col-sm-10">
+								<input type="email" required placeholder="Your Email Id (required)" class="form-control" id="email" name="email">
+							</div>
+						</div>
+						<br>
+						<br><br>
+						<div class="form-group">
+							<label for="message" class="col-sm-2 control-label">Message<span class="red">*</span></label>
+							<div class="col-sm-10">
+								<textarea rows="5" class="form-control" id="message" placeholder="things to want to say (required)" name="message"></textarea>
+							</div>
+						</div>
+						<button type="submit" name="bugsubmit" class="btn btn-primary">Submit</button>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/clickuser.js"></script>
+	<script>
+		var norows=document.getElementsByTagName('tr').length -8;
+					document.getElementById('results').innerHTML="Please select a slot from above.";
+			
+	</script>
+	
+</body>
+</html>
